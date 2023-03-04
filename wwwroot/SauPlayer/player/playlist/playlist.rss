@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:jwplayer="http://rss.jwpcdn.com/">
+<channel>
+
+  <item>
+    <title>Mado Cafe</title>
+    <description>Mado cafe istanbul!</description>
+    <jwplayer:image>./img/mado.jpg</jwplayer:image>
+    <jwplayer:source file="./video/mado/360p.flv" label="360p" />
+     
+    <!-- 
+    	<jwplayer:source file="./video/mado/360p.flv" label="360p" />
+      <jwplayer:source file="./video/mado/480p.flv" label="480p" />
+      <jwplayer:source file="./video/mado/720p.flv" label="780p HD" />
+	-->
+  </item>
+
+  <item>
+    <title>Horses</title>
+    <description>Amazing Galloping Horses</description>
+    <jwplayer:source file="//http://www.youtube.com/watch?v=OapMBWNgTzU" />
+  </item>
+
+ 
+  <item>
+    <title>Müzik</title>
+    <description>Post to be</description>
+    <jwplayer:source file="//http://www.youtube.com/watch?v=FK_wiPiVZV8" />
+  </item>
+
+  
+
+</channel>
+</rss>

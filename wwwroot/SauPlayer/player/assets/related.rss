@@ -1,0 +1,11 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <item>
+      <title>Big Buck Bunny</title>
+      <link>http://example.com/watch/28839</link>
+      <media:thumbnail url="http://jqueryegitimseti.com/img/new_year/jquery_logo_new_year.png"/>
+      <media:content url="//http://www.youtube.com/watch?v=OapMBWNgTzU"  />
+    </item>
+
+  </channel>
+</rss>

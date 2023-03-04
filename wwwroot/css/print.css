@@ -1,0 +1,7 @@
+@media print {
+    .card {
+        display: block !important;
+        page-break-inside: avoid;
+        page-break-after: auto
+    }
+}

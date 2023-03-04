@@ -1,0 +1,54 @@
+﻿@using Toltek.Models;
+@model Toltek.Live.Models.VClassView
+@{
+    var url = $"/{Model.ProviderKey}/Details/{Model.VClassId}";
+}
+@if (Model.Status != 11 && Model.Status != 12)
+{
+    if (Model.TimeStatus == VTimeStatus.Pass || Model.Status > 1) // Geçmiş
+    {
+        if (Model.Status == 0 || Model.Status == 4)
+        {
+            <span class="badge border border-danger text-danger" title="@Model.StartDateFormat  - @Model.Duration dk">Yapılmadı</span>
+        }
+        else if (Model.Status == 5)
+        {
+
+            <a class="badge border border-danger text-danger popfull" target="_blank" href="@url" title="@Model.StartDateFormat - @Model.Duration dk ">Paketlenemedi</a>
+        }
+        else if (Model.Status == 2)
+        {
+            <a class="badge border border-primary text-primary popfull" target="_blank" href="@url" title="@Model.StartDateFormat  - @Model.Duration  dk ">Tamamlandı</a>
+        }
+        else
+        {
+            var color = Model.LiveCount > 0 ? "success" : "default";
+            <a class="badge border border-@color text-@color popfull" target="_blank" href="@url">
+                Kaydı İzle
+            </a>
+        }
+    }
+    else if (Model.TimeStatus == VTimeStatus.Now) // Canlı
+    {
+        <a class="badge border border-success text-success popfull" target="_blank" href="@url" title="@Model.StartDateFormat  - @Model.Duration  dk">
+            @(Model.Status == 0 ? "Eğitmen Bekleniyor" : "Katıl")
+        </a>
+    }
+    else // Gelecek
+    {
+        <span class="badge border border-info text-info" title="@Model.StartDateFormat  - @Model.Duration dk ">@Model.StartDateFormat</span>
+    }
+}
+else
+{
+    if (Model.Status == 11)
+    {
+        <span class="badge border border-warning text-warning" title="@Model.StartDateFormat  - @Model.Duration dk">Onay bekliyor</span>
+    }
+    else if (Model.Status == 12)
+    {
+        <span class="badge border border-danger text-danger" title="@Model.StartDateFormat  - @Model.Duration dk">Reddedildi</span>
+    }
+}
+
+

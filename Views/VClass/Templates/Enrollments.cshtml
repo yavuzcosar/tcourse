@@ -1,0 +1,32 @@
+﻿@using Toltek.Models;
+@model Toltek.Live.Models.VActivity
+@if (Model.EnrollmentsTotal > 0)
+{
+    var url = $"/{Model.ActivityType}/Enrollments/{Model.ActivityId}";
+    <a href="@url">
+        @if (Model.EnrollmentsTotal == Model.EnrollmentsCount)
+        {
+            <span class="badge border border-success text-success" title="Tüm Öğrenciler Katıldı">
+                <i class="fa fa-check mr-1"></i>
+                @Model.EnrollmentsTotal
+            </span>
+        }
+        else
+        {
+            if (Model.EnrollmentsCount > 0)
+            {
+                <span class="badge border border-success text-success" title="Katılan Öğrenci Sayısı">
+                    @Model.EnrollmentsCount
+                </span>
+            }
+            <span class="badge border border-danger text-danger" title="Katılmayan Öğrenci Sayısı">
+                @(Model.EnrollmentsTotal - Model.EnrollmentsCount)
+            </span>
+        }
+    </a>
+}
+else
+{
+    <span>-</span>
+}
+
