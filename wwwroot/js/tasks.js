@@ -30,7 +30,7 @@ connection.start().then(function () {
    // TaskReady();
 });
 function StepLog(step,m) {
-    console.log(step,m);
+   // console.log(step,m);
 };
 function TaskStart(name, parameter) {
     StepLog("Starting", name + "-->" + parameter);
