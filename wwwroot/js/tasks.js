@@ -19,7 +19,7 @@ connection.on('Progress', function (task) {
 });
 connection.on('Ended', function (task) {
     StepLog("Ended", task);
-    toastr.success("Dağıtım Tamamlandı");
+    TaskEnded(); 
 });
  
 connection.on("OnError", function (data) {
