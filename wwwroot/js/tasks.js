@@ -18,6 +18,7 @@ connection.on('Progress', function (task) {
     $("#taskProgress .d-flex .progress-label").text(task.Title);
 });
 connection.on('Ended', function (task) {
+    $("#taskProgress").hide();
     StepLog("Ended", task);
     TaskEnded(); 
 });
