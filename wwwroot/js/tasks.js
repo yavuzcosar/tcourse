@@ -32,7 +32,7 @@ connection.on("OnError", function (data) {
 });
 
 connection.start().then(function () {  
-   // TaskReady();
+    TaskReady();
 });
 function StepLog(step,m) {
    // console.log(step,m);
