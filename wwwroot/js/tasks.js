@@ -1,10 +1,11 @@
 ﻿const connection = new signalR.HubConnectionBuilder()
     .withUrl("/Tasks")
     .withAutomaticReconnect()
-    .configureLogging(signalR.LogLevel.Debug)
+    //.configureLogging(signalR.LogLevel.Debug)
     .build();
 
 connection.on('Started', function (task) {
+    $("#taskProgress .d-flex .progress-label").text(task.Title);
     StepLog("Started", task);
     $("#taskProgress").show();
 });
@@ -18,9 +19,12 @@ connection.on('Progress', function (task) {
     $("#taskProgress .d-flex .progress-label").text(task.Title);
 });
 connection.on('Ended', function (task) {
-    $("#taskProgress").hide();
+    $("#taskProgress .d-flex .progress-label").text(task.Title);
     StepLog("Ended", task);
-    TaskEnded(); 
+    if (task.Ended) {
+        $("#taskProgress").hide(); 
+    } 
+    TaskEnded(task);
 });
  
 connection.on("OnError", function (data) {
