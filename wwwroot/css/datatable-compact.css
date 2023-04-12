@@ -1,0 +1,21 @@
+.dataTables_wrapper > div:first-child {
+    display: none;
+}
+
+.dataTables_wrapper > div:nth-child(3) {
+    display: none;
+}
+
+table.ttable-headless thead {
+    display: none;
+}
+
+table.ttable-compact {
+    margin-bottom: 0 !important;
+}
+
+ 
+.ttable-compact > tbody > tr > td.dataTables_empty {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}

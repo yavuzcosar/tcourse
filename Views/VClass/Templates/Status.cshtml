@@ -1,7 +1,8 @@
 ﻿@using Toltek.Models;
 @model Toltek.Live.Models.VClassView
 @{
-    var url = $"/{Model.ProviderKey}/Details/{Model.VClassId}";
+    var url = $"/{Model.ProviderKey}/Details/{Model.VClassId}"; 
+    var replayUrl = $"/VClass/Replay/{Model.VClassId}";
 }
 @if (Model.Status != 11 && Model.Status != 12)
 {
@@ -14,16 +15,16 @@
         else if (Model.Status == 5)
         {
 
-            <a class="badge border border-danger text-danger popfull" target="_blank" href="@url" title="@Model.StartDateFormat - @Model.Duration dk ">Paketlenemedi</a>
+            <a class="badge border border-danger text-danger"  href="@replayUrl" title="@Model.StartDateFormat - @Model.Duration dk ">Paketlenemedi</a>
         }
         else if (Model.Status == 2)
         {
-            <a class="badge border border-primary text-primary popfull" target="_blank" href="@url" title="@Model.StartDateFormat  - @Model.Duration  dk ">Tamamlandı</a>
+            <a class="badge border border-primary text-primary"  href="@replayUrl" title="@Model.StartDateFormat  - @Model.Duration  dk ">Tamamlandı</a>
         }
         else
         {
             var color = Model.LiveCount > 0 ? "success" : "default";
-            <a class="badge border border-@color text-@color popfull" target="_blank" href="@url">
+            <a class="badge border border-@color text-@color"  href="@replayUrl">
                 Kaydı İzle
             </a>
         }
